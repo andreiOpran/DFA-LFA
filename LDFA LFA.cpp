@@ -1,5 +1,6 @@
 //#include "functii L1 LFA.h"
 #include "validareFisierDFA.h"
+#include "functii L1 LFA 2.h"
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <fstream>
@@ -11,18 +12,48 @@ typedef char matricechar[256][256];
 
 
 // FUNCTIILE DIN "functii L1 LFA.h"
-matricechar* load_file(char s[256]);
-vector<char*> get_section_list(matricechar* content);
-vector<char*> get_section_content(matricechar* content, char section_name[256]);
+//matricechar* load_file(char s[256]);
+//vector<char*> get_section_list(matricechar* content);
+//vector<char*> get_section_content(matricechar* content, char section_name[256]);
 
 //FUNCTIA DIN "validareFisierDFA.h"
-void validareFisier(char file_name[100]);
+//void validareFisier(char file_name[100]);
+
+// FUNCTIA DIN "functii L1 LFA 2.h"
+vector<string> loadFile(string);
 
 int main()
 {
-	char numeFisier[] = "dfa.txt";
+	string numeFisier = "dfa.txt";
+	vector<string> content;
+	content = loadFile(numeFisier);
+	for (int j = 0; j < content.size(); j++)
+		cout << content[j] << endl;
+	cout << endl;
+
+	vector<string> sectionList;
+	sectionList = getSectionList(content);
+	for(int j = 0; j < sectionList.size(); j++)
+		cout << sectionList[j] << endl;
+	
+	cout << endl;
+
+	vector<string> sectionContent;
+	sectionContent = getSectionContent(content, sectionList[1]);
+	for (int j = 0; j < sectionContent.size(); j++)
+		cout << sectionContent[j] << endl;
+
+	/*char numeFisier[] = "dfa.txt";
 	validareFisier(numeFisier);
 	
+	matricechar* content;
+	vector<char*> sec_lst, sec_cnt;
+
+	cout << "AFISARE FORMATARE TextFile2.txt:" << endl << endl;
+	content = load_file(numeFisier);
+	for (int j = 0; j < i; j++)
+		cout << content[0][j] << endl;
+	cout << endl;*/
 	return 0;
 }
 
