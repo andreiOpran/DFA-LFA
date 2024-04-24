@@ -64,3 +64,5 @@ char file_name[] = "TextFile2.txt";
 	for (int j = 0; j < sec_cnt.size(); j += 3)
 		cout << sec_cnt[j] << ' ' << sec_cnt[j + 1] << ' ' << sec_cnt[j + 2] << endl;
 */
+
+// COM DESKTOP
