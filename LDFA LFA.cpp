@@ -45,10 +45,6 @@ int main()
 				stariFinale.push_back(stari[i - 1]);
 		}
 
-		cout << "\nAlfabetul este: ";
-		for (int i = 0; i < sigma.size(); i++)
-			cout << sigma[i] << ' ';
-		cout << endl;
 		cout << "\nIntroduceti cuvantul pe care doriti sa il verificati: ";
 		string w;
 		cin >> w;
