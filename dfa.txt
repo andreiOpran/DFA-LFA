@@ -12,7 +12,7 @@ States:
 Q1
 Q2 F
 Q3 F S
-Q4
+Q4 
 End
 #
 # comment lines (skip them)
