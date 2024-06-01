@@ -3,16 +3,16 @@
 <br>
 
 ## Reguli de formatare al fisierului text de input:
-<br>
- - alfabetul poate contine doar litere cu o lungime egala cu 1, deoarece atunci cand parcurg sirul de verificat, il parcurg litera cu litera.
- - alfabetul nu poate contine "Q".
- - starile trebuie sa fie de forma "QX F S", unde X este un numar oarecare, iar "F" si "S" pot sa lipseasca, dar trebuie sa apara cel putin o data in fisierul de stari.
- - tranzitiile trebuie sa fie de forma "QX L QY", unde L este o litera din alfabet, QX si QY sunt stari din sectiunea de stari si pot identice.
- - o sectiune incepe cu "HeaderSectiune:" unde "HeaderSectiune" poate fi orice sir, si dupa ce se introduc datele conform formatarii de mai sus, pe ultima linie se introduce "End".
- - comentariile sunt semnalate prin "#" la inceputul liniei
- - alfabetul, starile si tranzitiile pot fi introduse in orice ordine, dar pot fi introduse o singura data
 
-<br><br>
+ - alfabetul poate contine doar litere cu o lungime egala cu 1, deoarece atunci cand parcurg sirul de verificat, il parcurg litera cu litera.  
+ - alfabetul nu poate contine "Q".  
+ - starile trebuie sa fie de forma "QX F S", unde X este un numar oarecare, iar "F" si "S" pot sa lipseasca, dar trebuie sa apara cel putin o data in fisierul de stari.  
+ - tranzitiile trebuie sa fie de forma "QX L QY", unde L este o litera din alfabet, QX si QY sunt stari din sectiunea de stari si pot identice.  
+ - o sectiune incepe cu "HeaderSectiune:" unde "HeaderSectiune" poate fi orice sir, si dupa ce se introduc datele conform formatarii de mai sus, pe ultima linie se introduce "End".  
+ - comentariile sunt semnalate prin "#" la inceputul liniei.  
+ - alfabetul, starile si tranzitiile pot fi introduse in orice ordine, dar pot fi introduse o singura data.  
+
+<br>
 
 ## Exemplu fisier de input:
 
