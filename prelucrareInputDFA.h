@@ -8,6 +8,8 @@
 #include <vector> 
 using namespace std;
 
+
+// functie care incarca continutul fisierului in vector
 vector<string> loadFile(string numeFisier)
 {
 	ifstream fin(numeFisier);
@@ -61,6 +63,8 @@ vector<string> loadFile(string numeFisier)
 	return fisier;
 }
 
+// functie care returneaza o lista cu sectiunile din fisier
+// sectiunile sunt cele care se termina cu :
 vector<string> getSectionList(vector<string> content)
 {
 	vector<string> sectionList;
@@ -78,6 +82,7 @@ vector<string> getSectionList(vector<string> content)
 	return sectionList;
 }
 
+// functie care returneaza continutul unei sectiuni
 vector<string> getSectionContent(vector<string> content, string sectionName)
 {
 	vector<string> sectionContent;
@@ -103,6 +108,10 @@ vector<string> getSectionContent(vector<string> content, string sectionName)
 					sectionContent.push_back(content[i]);
 					i++;
 				}
+				/*
+				cum se formateaza sectiunea de alfabet:
+				0 1
+				*/
 			}
 			if (stari)
 			{
@@ -129,6 +138,11 @@ vector<string> getSectionContent(vector<string> content, string sectionName)
 					}
 					i++;
 				}
+
+				/*
+				cum se formateaza sectiunea de stari: 
+				Q1 - - Q2 F - Q3 F S Q4 - -
+				*/
 			}
 			if (tranzitii) // parsam tranzitiile si le adaugam in vector
 			{
@@ -144,6 +158,10 @@ vector<string> getSectionContent(vector<string> content, string sectionName)
 					}
 					i++;
 				}
+				/*
+				cum se formateaza sectiunea de tranzitii:
+				Q1 0 Q2 Q2 1 Q3 Q2 0 Q2 Q4 1 Q3 Q3 0 Q4
+				*/
 			}
 			
 		}

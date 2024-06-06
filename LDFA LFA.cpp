@@ -8,7 +8,7 @@
 #include <algorithm>
 using namespace std;
 
-bool existaFisier(const string& numeFisier) 
+bool existaFisier(const string& numeFisier)  // verifica daca fisierul exista in folder
 {
 	ifstream file(numeFisier);
 	return file.good();
@@ -19,13 +19,13 @@ int main()
 
 	string numeFisier;
 	
-	while (true)
+	while (true) 
 	{
-		try
+		try // validare nume fisier
 		{
 			cout << "\nIntroduceti numele fisierului de intrare (numele fisierului deja creat in acest proiect este dfa.txt): ";
 			getline(cin, numeFisier);
-			if (!existaFisier(numeFisier))
+			if (!existaFisier(numeFisier)) // daca fisierul nu exista in folder throw invalid_argument
 				throw invalid_argument("\nFisierul nu exista in folder.\n");
 			break;
 		}
@@ -53,7 +53,7 @@ int main()
 		vector<string> sectionList;
 		sectionList = getSectionList(content); // lista cu sectiuni
 
-
+		s
 		vector<string> sigma, stari, tranzitii;
 
 		sigma = getSectionContent(content, sectionList[0]); // alfabet
@@ -82,30 +82,29 @@ int main()
 		while (true)
 		{
 			string stareCurenta = stareInitiala;
-			bool ok = true; // daca se blocheaza in vreo stare din care nu mai gaseste tranzitii sa iasa si starea aceea e finala
+			bool ok = true; // daca se blocheaza in vreo stare din care nu mai gaseste tranzitii sa iasa, si starea aceea e finala va spune ca accepta sirul dar este gresit
 			bool blocaj = false;
-			for (int i = 0; i < w.size(); i++)
+			for (int i = 0; i < w.size(); i++) // parcurge cuvantul
 			{
 				bool ok = false;
 				for (int j = 0; j < tranzitii.size(); j += 3)
 				{
-					if (tranzitii[j] == stareCurenta && tranzitii[j + 1][0] == w[i])
+					if (tranzitii[j] == stareCurenta && tranzitii[j + 1][0] == w[i]) // daca starea curenta si litera curenta din cuvant sunt egale cu cele din tranzitie
 					{
 						ok = true;
-						//cout << "\n\nAm trecut din starea " << stareCurenta << " in starea " << tranzitii[j + 2] << " cu caracterul " << w[i] << endl << endl;
-						stareCurenta = tranzitii[j + 2];
+						stareCurenta = tranzitii[j + 2]; // urmatoarea stare este pe pozitia j+2
 						break;
 					}
 				}
-				if (!ok)
+				if (!ok) // daca nu gaseste tranzitie
 				{
-					blocaj = true;
+					blocaj = true; // se blocheaza
 					break;
 				}
 			}
 
 			bool stareFinala = false;
-			for (int i = 0; i < stariFinale.size(); i++)
+			for (int i = 0; i < stariFinale.size(); i++) // verifica daca starea curenta este finala
 			{
 				if (stareCurenta == stariFinale[i])
 				{
@@ -114,7 +113,7 @@ int main()
 				}
 			}
 
-			if (stareFinala && !blocaj)
+			if (stareFinala && !blocaj) // daca a ajuns in stare finala si nu s-a blocat
 				cout << "\nCuvantul " << w << " este acceptat.\n";
 			else
 				cout << "\nCuvantul " << w << " nu este acceptat.\n";

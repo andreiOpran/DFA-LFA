@@ -29,6 +29,11 @@ bool validareFisier(string numeFisier)
 	stari = getSectionContent(content, sectionList[1]);
 	tranzitii = getSectionContent(content, sectionList[2]); 
 
+	for (string s : sigma)
+	{
+		cout << s << " ";
+	}
+
 	vector <string> stariFinale;
 
 	// verificare existenta stare start / a mai multor stari de start
@@ -36,7 +41,7 @@ bool validareFisier(string numeFisier)
 	for (int i = 2; i < stari.size(); i++) 
 	{
 		if (stari[i] == "S")
-			nrStariStart++;
+			nrStariStart++; // numar stari de start
 	}
 	if(nrStariStart > 1)
 	{
@@ -55,7 +60,7 @@ bool validareFisier(string numeFisier)
 	for (int i = 1; i < stari.size(); i++) 
 	{
 		if (stari[i] == "F")
-			stariFinale.push_back(stari[i - 1]);
+			stariFinale.push_back(stari[i - 1]); // adaug starea finala in lista de stari finale
 	}
 	if(stariFinale.size() == 0)
 	{
@@ -71,7 +76,7 @@ bool validareFisier(string numeFisier)
 		ok = false;
 		for(string litera : sigma)
 		{
-			if (tranzitii[i] == litera)
+			if (tranzitii[i] == litera) // daca litera din tranzitii exista in alfabet iese din for
 			{
 				ok = true;
 				break;
@@ -94,7 +99,7 @@ bool validareFisier(string numeFisier)
 			ok = false;
 			for (string stare : stari)
 			{
-				if (tranzitii[i] == stare)
+				if (tranzitii[i] == stare) // daca starea din tranzitii exista in lista de stari iese din for
 				{
 					ok = true;
 					break;
