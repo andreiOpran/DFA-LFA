@@ -29,11 +29,6 @@ bool validareFisier(string numeFisier)
 	stari = getSectionContent(content, sectionList[1]);
 	tranzitii = getSectionContent(content, sectionList[2]); 
 
-	for (string s : sigma)
-	{
-		cout << s << " ";
-	}
-
 	vector <string> stariFinale;
 
 	// verificare existenta stare start / a mai multor stari de start
