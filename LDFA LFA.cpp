@@ -8,10 +8,40 @@
 #include <algorithm>
 using namespace std;
 
+bool existaFisier(const string& numeFisier) 
+{
+	ifstream file(numeFisier);
+	return file.good();
+}
+
 int main()
 {
-	string numeFisier = "dfa.txt";
+
+	string numeFisier;
 	
+	while (true)
+	{
+		try
+		{
+			cout << "\nIntroduceti numele fisierului de intrare (numele fisierului deja creat in acest proiect este dfa.txt): ";
+			getline(cin, numeFisier);
+			if (!existaFisier(numeFisier))
+				throw invalid_argument("\nFisierul nu exista in folder.\n");
+			break;
+		}
+		catch (exception& e)
+		{
+			cout << e.what();
+		}
+		catch (...)
+		{
+			cout << "\nEroare necunoscuta.\n";
+		}
+	}
+	
+	
+	
+
 	bool fisierValid = false;
 	fisierValid = validareFisier(numeFisier);
 

@@ -3,7 +3,7 @@
 bool validareFisier(string numeFisier)
 {
 
-	cout << "Validare fisier " << numeFisier << "\n";
+	cout << "\nValidare fisier " << numeFisier << "\n";
 	cout << "\nDoriti afisarea erorilor si oprirea programului in caz de gasire a unei erori?\n1. Da\n2. Nu\n";
 	cout << "\n> ";
 	string raspuns;
@@ -45,6 +45,7 @@ bool validareFisier(string numeFisier)
 
 
 
+	// verificare existenta stari finale
 	for (int i = 1; i < stari.size(); i++) 
 	{
 		if (stari[i] == "F")
