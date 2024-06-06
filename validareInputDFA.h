@@ -19,6 +19,12 @@ bool validareFisier(string numeFisier)
 	content = loadFile(numeFisier);
 	sectionList = getSectionList(content);
 
+	if (sectionList.size() != 3)
+	{
+		cout << "\nFisierul " << numeFisier << " nu are 3 sectiuni.\n";
+		return false;
+	}
+
 	sigma = getSectionContent(content, sectionList[0]); 
 	stari = getSectionContent(content, sectionList[1]);
 	tranzitii = getSectionContent(content, sectionList[2]); 
