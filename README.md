@@ -1,4 +1,4 @@
-# Deterministic finite automaton Emulator
+# Deterministic Finite Automaton Emulator
 
 <br>
 
