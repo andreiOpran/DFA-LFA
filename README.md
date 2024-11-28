@@ -1,20 +1,31 @@
-# Emulator DFA
+# Deterministic finite automaton Emulator
 
 <br>
 
-## Reguli de formatare al fisierului text de input:
+This C++ project is designed to validate and process inputs for a Deterministic Finite Automaton. It reads a DFA
+configuration from a text file, which includes states, transitions, and alphabet, then verifies if a given word is accepted
+by the automaton. The program provides error handling for missing files, validates file contents, and allows users to
+test multiple inputs interactively.
 
- - alfabetul poate contine doar litere cu o lungime egala cu 1, deoarece atunci cand parcurg sirul de verificat, il parcurg litera cu litera.  
- - alfabetul nu poate contine "Q".  
- - starile trebuie sa fie de forma "QX F S", unde X este un numar oarecare, iar "F" si "S" pot sa lipseasca, dar trebuie sa apara cel putin o data in fisierul de stari.  
- - tranzitiile trebuie sa fie de forma "QX L QY", unde L este o litera din alfabet, QX si QY sunt stari din sectiunea de stari si pot fi identice.  
- - o sectiune incepe cu "HeaderSectiune:" unde "HeaderSectiune" poate fi orice sir, si dupa ce se introduc datele conform formatarii de mai sus, pe ultima linie se introduce "End".  
- - comentariile sunt semnalate prin "#" la inceputul liniei.  
- - alfabetul, starile si tranzitiile pot fi introduse in orice ordine, dar pot fi introduse o singura data.  
 
 <br>
 
-## Exemplu fisier de input:
+## Formatting Rules for the Input Text File:
+
+- The alphabet can only contain letters of length 1, because when processing the string to be checked, it is processed letter by letter.
+- The alphabet cannot contain "Q".
+- States must be in the format "QX F S", where X is any number, and "F" and "S" may be omitted but must appear at least once in the states section.
+- Transitions must be in the format "QX L QY", where L is a letter from the alphabet, and QX and QY are states from the states section, which can be identical.
+- A section begins with "SectionHeader:" where "SectionHeader" can be any string, and after the data is entered according to the above format, the last line should contain "End".
+- Comments are marked with "#" at the beginning of the line.
+- The alphabet, states, and transitions can be entered in any order, but each can only appear once.
+
+
+
+
+<br>
+
+## Example of an input file:
 
 <br>
 
